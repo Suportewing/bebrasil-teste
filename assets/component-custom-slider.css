@@ -1,0 +1,35 @@
+  .custom-image-slider-wrapper {
+    display: flex;
+    flex-direction: row;
+  }
+
+.custom-image-slider-wrapper .slider-item {
+    max-width: 200px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.11);
+    border-radius: 8px;
+    margin-right: 5px;
+    }
+
+.custom-image-slider-wrapper .owl-stage-outer {
+  padding: 1rem;
+}
+.card__content .card__information .price .price-item{
+  font-weight: 400 !important;
+}
+ .custom-image-slider-wrapper .owl-nav .owl-prev {
+   position: absolute;
+   left: 0;
+   top: 40px;
+   width: 25px;
+   background-color: #00A26B !important;
+   padding: 6px !important;
+ }
+
+ .custom-image-slider-wrapper .owl-nav .owl-next {
+   position: absolute;
+   right: 0;
+   top: 40px;
+   width: 25px;
+   background-color: #00A26B !important;
+   padding: 6px !important;
+ }

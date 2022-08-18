@@ -1,0 +1,73 @@
+{% if section.settings.announcement_image != _blank and section.settings.announcement_image_mobile != _blank %}
+<div class="section custom-announcement">
+    <img class="announcement-image-desktop" src="{{ section.settings.announcement_image | img_url: "master" }}" alt="">
+    <img class="announcement-image-mobile" src="{{ section.settings.announcement_image_mobile | img_url: "master" }}" alt="">
+</div>
+{% endif %}
+
+{% style %}
+  .custom-announcement-bar {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background: #FFFFFF;
+  }
+  
+  .custom-announcement {
+    width: 100%;
+    height: fit-content;
+  }
+  .custom-announcement img {
+    width: 100%;
+  }
+
+  .custom-announcement .announcement-image-mobile {
+    display: none;
+  }
+
+  @media(max-width: 768px) {
+    .custom-announcement .announcement-image-desktop {
+      display: none;
+    }
+
+    .custom-announcement .announcement-image-mobile {
+      display: block;
+      width: 100%;
+    }
+  }
+{% endstyle %}  
+
+{% schema %}
+{
+  "name": "Notification bar",
+  "tag": "section",
+  "class": "custom-announcement-bar",
+  "limit": 1,
+  "settings": [
+    {
+    "type": "header",
+    "content": "Announcement bar"
+      },
+    {
+      "type": "url",
+      "id": "url_banner",
+      "label": "Adicionar imagem",
+      "default": "/collections/all"
+    },
+    {
+      "type": "image_picker",
+      "label": "Announcement Image",
+      "id": "announcement_image"
+    },
+    {
+      "type": "header",
+      "content": "Announcement Bar mobile"
+    },
+    {
+      "type": "image_picker",
+      "label": "Announcement Image mobile",
+      "id": "announcement_image_mobile"
+    }
+  ]
+}
+{% endschema %}
